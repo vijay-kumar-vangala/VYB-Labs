@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Projects — VYB Labs{% endblock %}
+{% block content %}
+<section class="page-hero"><div class="container"><span class="eyebrow">PROJECTS</span><h1>A look at what <span>we can build.</span></h1><p>Selected development, AI, analytics and web application work from the VYB Labs portfolio.</p></div></section>
+<section class="section"><div class="container"><div class="project-grid projects-page">{% for project in projects %}<article class="project-card large reveal"><div class="project-top"><span>{{ project.category }}</span><span>0{{ loop.index }}</span></div><div class="project-placeholder"><span>VYB</span><small>{{ project.category }}</small></div><h2>{{ project.title }}</h2><p>{{ project.description }}</p><small class="tech">{{ project.tech }}</small><div class="project-link">{% if project.url %}<a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.label }} ↗</a>{% else %}<span>{{ project.label }} — details available on request</span>{% endif %}</div></article>{% endfor %}</div></div></section>
+{% endblock %}

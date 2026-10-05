@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Services — VYB Labs{% endblock %}
+{% block content %}
+<section class="page-hero"><div class="container"><span class="eyebrow">SERVICES</span><h1>Digital solutions for <span>real-world needs.</span></h1><p>Choose what you need today. We can expand the solution as your business grows.</p></div></section>
+<section class="section"><div class="container"><div class="service-grid">{% for title, description in services %}<article class="service-card reveal"><span class="service-icon">0{{ loop.index }}</span><h2>{{ title }}</h2><p>{{ description }}</p><a href="{{ url_for('contact') }}?service={{ title|urlencode }}">Discuss this service →</a></article>{% endfor %}</div></div></section>
+<section class="section cta-section"><div class="container cta"><span class="eyebrow">NOT SURE WHAT YOU NEED?</span><h2>Tell us the problem. We'll help shape the solution.</h2><a class="btn btn-primary" href="{{ url_for('contact') }}">Get a Free Quote ↗</a></div></section>
+{% endblock %}
